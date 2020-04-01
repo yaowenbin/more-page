@@ -1,0 +1,527 @@
+/*
+ * @Author: jjy.yaowenbin 
+ * @Date: 2019-05-14 11:24:02 
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2019-10-30 10:56:09
+ * @descrition：原子样式
+ */
+
+ body {
+  /* 标准色 */
+  --red: #e54d42;
+  --blue: #2284e5;
+  --black: #333333;
+  --gray: #aaaaaa;
+  --white: #ffffff;
+  /* 浅色 */
+  --blueLight: #4482dd;
+  /* 渐变色 */
+  --gradualRed: linear-gradient(45deg, #f43f3b, #ec008c);
+  /* 阴影透明色 */
+  --ShadowSize: 6px 6px 8px;
+  --blackShadow: rgba(26, 26, 26, 0.2);
+}
+
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+form,
+input,
+textarea,
+em,
+i,
+span,
+label,
+button,
+select {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+  list-style: none;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  outline: none;
+}
+
+input {
+  background: none;
+  outline: none;
+  border: 0px;
+}
+
+.shadow-bg {
+  box-shadow: 0 2px 8px 0 rgba(7, 17, 27, 0.06);
+}
+
+.shadow-bg000{
+  box-shadow: 0 2px 4px 0 rgba(7, 17, 27, 0.06);
+}
+
+
+/* ==================
+        文本
+ ==================== */
+
+.text-xs {
+  font-size: 12px;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.text-df {
+  font-size: 16px;
+}
+
+.text-lg {
+  font-size: 18px;
+}
+
+.text-xl {
+  font-size: 20px;
+}
+
+.text-xxl {
+  font-size: 22px;
+}
+
+.text-price::before {
+  content: "¥";
+  font-size: 80%;
+  margin-right: 4px;
+  font-family: PingFangSC-Medium;
+}
+
+.text-cut {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-content {
+  line-height: 1.6;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* ==================
+        背景
+ ==================== */
+
+.bg-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-mask {
+  background-color: var(--black);
+  position: relative;
+}
+
+.bg-mask::after {
+  content: "";
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.bg-mask div {
+  z-index: 5;
+  position: relative;
+}
+
+.bg-gray {
+  background-color: #f0f0f0;
+  color: var(--black);
+}
+
+.bg-black {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.bg-white {
+  background-color: var(--white);
+  color: var(--darkGray);
+}
+
+/* ==================
+        下划线
+ ==================== */
+
+.line-gray::after,
+.lines-gray::after {
+  border-color: var(--gray);
+}
+
+.line-black::after,
+.lines-black::after {
+  border-color: var(--black);
+}
+
+.line-white::after,
+.lines-white::after {
+  border-color: var(--white);
+}
+
+/* ==================
+        padding：优先使用padding，margin容易引起BFC导致布局计算错误
+ ==================== */
+
+.padding-0 {
+  padding: 0;
+}
+
+.padding-xs {
+  padding: 10px;
+}
+
+.padding-sm {
+  padding: 20px;
+}
+
+.padding {
+  padding: 30px;
+}
+
+.padding-lg {
+  padding: 40px;
+}
+
+.padding-xl {
+  padding: 50px;
+}
+
+.padding-top-xs {
+  padding-top: 10px;
+}
+
+.padding-top-sm {
+  padding-top: 20px;
+}
+
+.padding-top {
+  padding-top: 30px;
+}
+
+.padding-top-lg {
+  padding-top: 40px;
+}
+
+.padding-top-xl {
+  padding-top: 50px;
+}
+
+.padding-right-xs {
+  padding-right: 10px;
+}
+
+.padding-right-sm {
+  padding-right: 20px;
+}
+
+.padding-right {
+  padding-right: 30px;
+}
+
+.padding-right-lg {
+  padding-right: 40px;
+}
+
+.padding-right-xl {
+  padding-right: 50px;
+}
+
+.padding-bottom-xs {
+  padding-bottom: 10px;
+}
+
+.padding-bottom-sm {
+  padding-bottom: 20px;
+}
+
+.padding-bottom {
+  padding-bottom: 30px;
+}
+
+.padding-bottom-lg {
+  padding-bottom: 40px;
+}
+
+.padding-bottom-xl {
+  padding-bottom: 50px;
+}
+
+.padding-left-xs {
+  padding-left: 10px;
+}
+
+.padding-left-sm {
+  padding-left: 20px;
+}
+
+.padding-left {
+  padding-left: 30px;
+}
+
+.padding-left-lg {
+  padding-left: 40px;
+}
+
+.padding-left-xl {
+  padding-left: 50px;
+}
+
+/* ==================
+        margin
+ ==================== */
+.margin-0 {
+  margin: 0;
+}
+
+.margin-xs {
+  margin: 10px;
+}
+
+.margin-sm {
+  margin: 20px;
+}
+
+.margin {
+  margin: 30px;
+}
+
+.margin-lg {
+  margin: 40px;
+}
+
+.margin-xl {
+  margin: 50px;
+}
+
+.margin-top-xs {
+  margin-top: 10px;
+}
+
+.margin-top-sm {
+  margin-top: 20px;
+}
+
+.margin-top {
+  margin-top: 30px;
+}
+
+.margin-top-lg {
+  margin-top: 40px;
+}
+
+.margin-top-xl {
+  margin-top: 50px;
+}
+
+.margin-right-xs {
+  margin-right: 10px;
+}
+
+.margin-right-sm {
+  margin-right: 20px;
+}
+
+.margin-right {
+  margin-right: 30px;
+}
+
+.margin-right-lg {
+  margin-right: 40px;
+}
+
+.margin-right-xl {
+  margin-right: 50px;
+}
+
+.margin-bottom-xs {
+  margin-bottom: 10px;
+}
+
+.margin-bottom-sm {
+  margin-bottom: 20px;
+}
+
+.margin-bottom {
+  margin-bottom: 30px;
+}
+
+.margin-bottom-lg {
+  margin-bottom: 40px;
+}
+
+.margin-bottom-xl {
+  margin-bottom: 50px;
+}
+
+.margin-left-xs {
+  margin-left: 10px;
+}
+
+.margin-left-sm {
+  margin-left: 20px;
+}
+
+.margin-left {
+  margin-left: 30px;
+}
+
+.margin-left-lg {
+  margin-left: 40px;
+}
+
+.margin-left-xl {
+  margin-left: 50px;
+}
+
+/* ==================
+        flex布局：由于业务不考虑兼容低版本ie，推荐采用flex+position 实现布局，而不是浮动
+ ==================== */
+.flex-shrink {
+  flex-shrink: 0,
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-sub {
+  flex: 1;
+}
+
+/*
+* flex-direction ：控制主轴方向
+* row(默认)：左-右
+* column：上-下
+* wrap-reverse:右-左
+* column-reverse:下-上
+*/
+.flex-direction {
+  flex-direction: column;
+}
+
+.wrap-reverse {
+  flex-direction: wrap-reverse;
+}
+
+/*
+* flex-wrap ：控制主轴元素折行
+* nowrap(默认)：不折行
+* wrap：折行
+* wrap-reverse：反向折行
+*/
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+/*
+* flex-basis : 刚性尺寸
+* flex-grow : 放大比例
+* flex-shrink: 缩小比例
+*/
+
+/*
+* 交叉轴对齐
+* flex-start:沿交叉轴起点对齐（顶部）
+* flex-end:沿交叉轴终点对齐(底部)
+* center: 垂直居中
+* baseline:沿第一行文字基线对齐
+* 交叉轴不一定从上往下，由主轴决定
+*/
+
+.align-center {
+  align-items: center;
+}
+
+.align-top{
+  align-items: flex-start;
+}
+
+/*
+* justify-content:主轴对齐
+* flex-start:沿左对齐
+* flex-end:沿右对齐
+* center :水平居中
+* space-between:左-中-右
+* space-around: 类似等分布局
+*/
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-top {
+  justify-content: top;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+
+}
+
+/*
+* align-content:设置多行元素的交叉轴对齐
+*/
+
+/*
+* order设置元素排列顺序
+*/
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
