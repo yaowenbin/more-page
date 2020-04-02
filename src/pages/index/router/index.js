@@ -10,12 +10,7 @@ const constantRoutes = [{
 {
   path: '/home-page',
   name: 'home-page',
-  component: () => import('../components/HomePage.vue')
-},
-{
-  path: '/with-router',
-  name: 'with-router',
-  component: () => import('../components/WithRouter.vue')
+  component: () => import('../view/index/index.vue')
 }
 ]
 

@@ -1,8 +1,7 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
 import { throttle } from '@/utils'
-
-// baseUrl、token 不同
+import Cookies from 'js-cookie'
 
 /**
  * 提示函数
@@ -42,10 +41,12 @@ const service = axios.create({
  */
 service.interceptors.request.use(
   config => {
-    const token = 'token'
+    const token = Cookies.get('token')
+    const baseURL = Cookies.get('baseURL')
+
     token && (config.headers['jtoken'] = token)
     // 根据setting配置动态设置baseurl
-    config.baseURL = ''
+    baseURL && (config.baseURL = baseURL || process.env.VUE_APP_BASE_API)
     return config
   },
 
